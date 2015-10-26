@@ -12,7 +12,11 @@ static inline void fpconv_init()
     /* Do nothing - not required */
 }
 #else
+#if defined(__APPLE__)
+extern void fpconv_init();
+#else
 extern inline void fpconv_init();
+#endif
 #endif
 
 extern int fpconv_g_fmt(char*, double, int);
